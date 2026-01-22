@@ -56,7 +56,8 @@ cols_base = [
     "IPCC [A]",
 ]
 
-df["In[A]/Curva/KA"] = [datos[i]["curva"] for i in range(1, len(df) + 1)]
+df["In[A]/Curva/KA"] = [f'{datos[i]["curva"]}/{datos[i]["In"]}'for i in range(1, len(df) + 1)]
+
 df["Zs Max."] = [datos[i]["zsmax"] for i in range(1, len(df) + 1)]
 
 
@@ -132,5 +133,8 @@ for c in range(1, max_col + 1):
     ws.cell(row=2, column=c).font = bold
 
 wb.save(path)
+
+wb.save(path)
+
 
 
